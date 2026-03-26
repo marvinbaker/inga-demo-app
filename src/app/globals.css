@@ -1,23 +1,26 @@
 @import "tailwindcss";
 
 @theme {
-  --color-navy-50: #E6EEF5;
-  --color-navy-100: #B3CCE0;
-  --color-navy-200: #80AACB;
-  --color-navy-300: #4D88B6;
-  --color-navy-400: #2670A6;
-  --color-navy-500: #005A96;
-  --color-navy-600: #003366;
-  --color-navy-700: #002B57;
-  --color-navy-800: #001F3F;
-  --color-navy-900: #001529;
+  /* SEB-inspired palette from Stitch analysis */
+  --color-navy-50: #EBF2F8;
+  --color-navy-100: #C3D9EA;
+  --color-navy-200: #9BC0DC;
+  --color-navy-300: #5A9BC5;
+  --color-navy-400: #2B7AB5;
+  --color-navy-500: #0072CF;
+  --color-navy-600: #005A9E;
+  --color-navy-700: #003F6E;
+  --color-navy-800: #1A1A1A;
+  --color-navy-900: #111111;
 
-  --color-accent-400: #33A1D9;
-  --color-accent-500: #0077B6;
-  --color-accent-600: #005F8F;
+  --color-accent-400: #2B90D9;
+  --color-accent-500: #0072CF;
+  --color-accent-600: #005A9E;
+
+  --color-seb-green: #60CD18;
 
   --color-status-recruiting: #059669;
-  --color-status-active: #2563EB;
+  --color-status-active: #0072CF;
   --color-status-completed: #6B7280;
   --color-status-suspended: #DC2626;
   --color-status-notyet: #D97706;
@@ -28,5 +31,5 @@
 body {
   font-family: var(--font-sans);
   color: #1f2937;
-  background-color: #f8fafc;
+  background-color: #f5f7fa;
 }

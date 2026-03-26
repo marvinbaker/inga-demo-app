@@ -1,14 +1,14 @@
 export default function Footer() {
   return (
-    <footer className="bg-navy-800 text-navy-200 mt-auto">
+    <footer className="bg-navy-800 text-gray-400 mt-auto">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
-        <div className="border-t border-navy-700 pt-6">
+        <div className="border-t border-white/10 pt-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <h3 className="text-white font-semibold text-sm mb-2">
-                TrialFinder
+                Clinical<span className="text-accent-500">Editorial</span>
               </h3>
-              <p className="text-xs text-navy-300 leading-relaxed">
+              <p className="text-xs leading-relaxed">
                 Helping ER+/HER2- breast cancer patients discover relevant
                 clinical trials worldwide. Data sourced from ClinicalTrials.gov
                 and PubMed.
@@ -18,22 +18,21 @@ export default function Footer() {
               <h3 className="text-white font-semibold text-sm mb-2">
                 Medical Disclaimer
               </h3>
-              <p className="text-xs text-navy-300 leading-relaxed">
+              <p className="text-xs leading-relaxed">
                 This tool is for informational purposes only and does not
                 constitute medical advice. Always consult your healthcare
                 provider before making decisions about clinical trial
-                participation. Trial eligibility is determined by the research
-                team conducting each study.
+                participation.
               </p>
             </div>
           </div>
-          <div className="mt-6 pt-4 border-t border-navy-700 text-xs text-navy-400 text-center">
+          <div className="mt-6 pt-4 border-t border-white/10 text-xs text-gray-500 text-center">
             Data from{" "}
             <a
               href="https://clinicaltrials.gov"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-accent-400 hover:text-accent-300"
+              className="text-accent-400 hover:text-accent-500"
             >
               ClinicalTrials.gov
             </a>{" "}
@@ -42,7 +41,7 @@ export default function Footer() {
               href="https://pubmed.ncbi.nlm.nih.gov"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-accent-400 hover:text-accent-300"
+              className="text-accent-400 hover:text-accent-500"
             >
               PubMed
             </a>

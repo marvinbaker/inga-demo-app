@@ -1,7 +1,6 @@
 import { Suspense } from "react";
 import { fetchNewsArticles } from "@/lib/api/pubmed";
-import NewsHero from "@/components/news/NewsHero";
-import NewsCard from "@/components/news/NewsCard";
+import NewsPageClient from "@/components/news/NewsPageClient";
 
 export const revalidate = 86400; // 24 hours
 
@@ -31,36 +30,27 @@ async function NewsContent() {
     );
   }
 
-  const [featured, ...rest] = articles;
-
-  return (
-    <>
-      <NewsHero article={featured} />
-
-      {rest.length > 0 && (
-        <div className="mt-8">
-          <h2 className="text-lg font-semibold text-navy-800 mb-4">
-            More Research
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {rest.map((article) => (
-              <NewsCard key={article.pmid} article={article} />
-            ))}
-          </div>
-        </div>
-      )}
-    </>
-  );
+  return <NewsPageClient articles={articles} />;
 }
 
 function NewsLoading() {
   return (
     <div className="space-y-6">
+      <div className="bg-navy-50/50 border-b border-navy-100 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 py-8 mb-6 animate-pulse">
+        <div className="h-3 w-20 bg-gray-200 rounded mb-3" />
+        <div className="h-9 w-2/3 bg-gray-200 rounded mb-3" />
+        <div className="h-4 w-1/3 bg-gray-200 rounded" />
+      </div>
+      <div className="h-10 w-full bg-gray-200 rounded-lg mb-4 animate-pulse" />
+      <div className="flex gap-2 mb-6">
+        {Array.from({ length: 5 }).map((_, i) => (
+          <div key={i} className="h-8 w-24 bg-gray-200 rounded-full animate-pulse" />
+        ))}
+      </div>
       <div className="rounded-2xl bg-gray-100 p-8 animate-pulse">
         <div className="h-4 w-20 bg-gray-200 rounded-full mb-3" />
         <div className="h-7 w-3/4 bg-gray-200 rounded mb-3" />
-        <div className="h-4 w-1/2 bg-gray-200 rounded mb-2" />
-        <div className="h-4 w-1/3 bg-gray-200 rounded" />
+        <div className="h-4 w-1/2 bg-gray-200 rounded" />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {Array.from({ length: 6 }).map((_, i) => (
@@ -82,15 +72,6 @@ function NewsLoading() {
 export default function NewsPage() {
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 lg:py-8">
-      <div className="mb-6">
-        <h1 className="text-2xl lg:text-3xl font-bold text-navy-800 mb-1">
-          Research News
-        </h1>
-        <p className="text-sm text-gray-500">
-          Latest ER+/HER2- breast cancer research from PubMed, updated daily
-        </p>
-      </div>
-
       <Suspense fallback={<NewsLoading />}>
         <NewsContent />
       </Suspense>
