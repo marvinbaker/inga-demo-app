@@ -90,7 +90,7 @@ export default function TrialsPageClient({ initialData }: TrialsPageClientProps)
       {/* Page header */}
       <div className="mb-6">
         <h1 className="text-2xl lg:text-3xl font-bold text-navy-800 mb-1">
-          Clinical Trials
+          Clinical  Trials
         </h1>
         <p className="text-sm text-gray-500">
           ER+/HER2- breast cancer trials worldwide
